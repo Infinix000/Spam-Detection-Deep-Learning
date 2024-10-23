@@ -63,7 +63,7 @@ Ensure you have the trained \`model_spam.keras\` and \`tokenizer.json\` files in
 python app.py
 \`\`\`
 
-By default, the Flask app runs on \`[http://127.0.0.1:5000/\](https://spam-detection-deep-learning.onrender.com)\`.
+By default, the Flask app runs on \`http://127.0.0.1:5000/\`.
 
 ## Usage
 
