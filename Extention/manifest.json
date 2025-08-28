@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Spam Detector 2.0",
+  "version": "2.1",
+  "description": "Detect spam emails using AI",
+  "permissions": [
+    "identity",
+    "identity.email",
+    "storage",
+    "activeTab",
+    "scripting" 
+  ],
+  "host_permissions": [
+    "https://www.googleapis.com/*",
+    "https://mail.google.com/*",
+    "http://127.0.0.1:8000/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "img16.png"
+    }
+  },
+  "web_accessible_resources": [
+  {
+    "resources": ["icons/*.svg"],
+    "matches": ["<all_urls>"]
+  }
+]
+ 
+}

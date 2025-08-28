@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Spam Detector</title>
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body style="background-color: black;">
+    <div class="header">
+        <img src="img16.png" alt="" style="width: 100px; border-radius: 150%;">
+        <div class="title">Email Shield</div>
+        <div class="subtitle">Spam Detection</div>
+    </div>
+
+    <div class="main-content">
+        <div class="input-group">
+            <label class="input-label">Email Content</label>
+            <textarea id="textInput" class="text-input"
+                placeholder="Paste your email content here for analysis..."></textarea>
+        </div>
+
+        <div class="button-group">
+            <button id="analyzeButton" class="btn btn-primary">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Analyze
+            </button>
+            <button id="fetchEmailButton" class="btn btn-secondary">
+                <span><i class="fa-solid fa-inbox"></i></span>
+                Fetch Email
+            </button>
+        </div>
+
+        <div class="result-container">
+            <div id="result"></div>
+        </div>
+
+        <button id="toggleOptionsButton" class="toggle-btn">
+            Advanced Options
+        </button>
+
+        <div class="advanced-options" id="advancedOptionsContainer">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value" id="scanned-count">0</span>
+                    <div class="stat-label">Emails Scanned</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="threat-count">0</span>
+                    <div class="stat-label">Threats Detected</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <i class="fa-solid fa-chart-pie"></i> Latest Scan Results
+                </div>
+                <div class="risk-meter">
+                    <div class="risk-level">
+                        <div class="risk-fill" id="risk-fill"></div>
+                    </div>
+                    <div class="risk-text" id="risk-text">No recent scans</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <i class="fa-solid fa-gear"></i> Settings
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="setting-name">Auto-scan emails</div>
+                        <div class="setting-desc">Automatically analyze emails when opened</div>
+                    </div>
+                    <div class="toggle active" id="auto-scan"></div>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="setting-name">Risk threshold</div>
+                        <div class="setting-desc">Minimum risk level for warnings</div>
+                    </div>
+                    <select class="select" id="scan-threshold">
+                        <option value="0.5">Medium (50%)</option>
+                        <option value="0.7" selected>High (70%)</option>
+                        <option value="0.9">Very High (90%)</option>
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="setting-name">Desktop notifications</div>
+                        <div class="setting-desc">Show alerts for high-risk emails</div>
+                    </div>
+                    <div class="toggle active" id="show-notifications"></div>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="setting-name">Deep link analysis</div>
+                        <div class="setting-desc">Analyze all links in emails</div>
+                    </div>
+                    <div class="toggle active" id="scan-links"></div>
+                </div>
+            </div>
+
+            <button id="reset-settings" class="btn btn-secondary" style="width: 100%;">
+                <i class="fa-solid fa-rotate-left"></i> Reset to Defaults
+            </button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="status-indicator">
+            <div class="status-dot"></div>
+            <span><i class="fa-solid fa-shield-halved"></i> Protection Active</span>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
